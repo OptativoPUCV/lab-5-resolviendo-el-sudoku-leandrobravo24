@@ -51,10 +51,6 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
-       /* 
-       obtenga los nodos adyacentes a n
-       y agréguelos a la lista
-       */
     for(size_t i=0;i<9;i++){
         for(size_t j=0;j<9;j++){
             if(n->sudo[i][j]==0){
@@ -65,7 +61,6 @@ List* get_adj_nodes(Node* n){
                         pushBack(list, new);
                     }
                 }
-                return list;
             }
         }
     }
@@ -73,7 +68,7 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    return 0;
+  return 0;
 }
 
 Node* DFS(Node* initial, int* cont){
