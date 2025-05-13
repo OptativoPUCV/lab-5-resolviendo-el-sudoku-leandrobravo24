@@ -23,6 +23,7 @@ Node* read_file (char* file_name){
   FILE* file = fopen (file_name, "r");
   int i,j;
   for(i=0;i<9;i++){
+
        for(j=0;j<9;j++){
           if(!fscanf (file, "%d", &n->sudo[i][j]))
             printf("failed to read data!");
@@ -44,26 +45,25 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
     return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
-    for(size_t i=0;i<9;i++){
-        for(size_t j=0;j<9;j++){
-            if(n->sudo[i][j]==0){
-                for(size_t k=1;k<=9;k++){
-                    Node* new=copy(n);
-                    new->sudo[i][j]=k;
-                    if(is_valid(new)){
-                        pushBack(list, new);
-                    }
-                }
-            }
+  List* list=createList();
+  for(size_t i=0;i<9;i++){
+    for(size_t j=0;j<9;j++){
+      if(n->sudo[i][j]==0){
+        for(size_t k=1;k<=9;k++){
+          Node* new=copy(n);
+          new->sudo[i][j]=k;
+          if(is_valid(new)){
+            pushBack(list, new);
+          }
         }
+      }
     }
+  }
 }
 
 
