@@ -108,3 +108,12 @@ sudoku.c:92:1: error: control reaches end of non-void function [-Werror=return-t
  ^
 cc1.exe: all warnings being treated as errors
 6f93f33
+Tue, May 13, 2025  1:08:09 PM: 
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:92:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+918b2be
