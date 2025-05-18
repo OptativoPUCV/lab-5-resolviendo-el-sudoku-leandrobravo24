@@ -116,24 +116,19 @@ Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritm
 Node* DFS(Node* initial, int* cont){
   Stack* stack = createStack();
   push(stack, initial);
-  while(!is_empty(stack)){
-    Node* current = top(stack);
-    pop(stack);
+  while(size(initial) != 0){
+    Node* n = pop(stack);
     (*cont)++;
+    if(is_final(n)) continue;
     
-    if(is_final(current)){
-      return current;
+    List* adj_nodes = get_adj_nodes(n);
+    Node* aux = first(adj_nodes);
+    while(aux){
+      push(stack, aux);
+      aux = next(adj_nodes);
     }
-    
-    List* adj_nodes = get_adj_nodes(current);
-    for(Node* node = first(adj_nodes); node != NULL; node = next(adj_nodes)){
-      push(stack, node);
-    }
-    
-    clean(adj_nodes);
-    free(current);
+    free(n);
   }
-  return NULL;
 }
 
 
