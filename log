@@ -251,3 +251,14 @@ sudoku.c:133:1: error: control reaches end of non-void function [-Werror=return-
  ^
 cc1.exe: all warnings being treated as errors
 05b372d
+Sun, May 18, 2025 12:43:39 AM: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:133:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+7f92669
