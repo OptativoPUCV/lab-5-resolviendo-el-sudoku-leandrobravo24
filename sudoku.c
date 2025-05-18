@@ -133,6 +133,7 @@ Node* DFS(Node* initial, int* cont){
     clean(adj_nodes);
     free(current);
   }
+  return NULL;
 }
 
 
